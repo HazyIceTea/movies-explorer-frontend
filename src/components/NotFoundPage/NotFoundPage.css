@@ -34,6 +34,11 @@
     color: #4285F4;
     margin-top: 184px;
     text-decoration: none;
+    transition: opacity linear .2s;
+}
+
+.not-found-page__link:hover {
+    opacity: .7;
 }
 
 @media screen and (max-width: 768px){
