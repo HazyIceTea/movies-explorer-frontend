@@ -1,0 +1,37 @@
+.filter-container {
+    margin: 0 auto 40px;
+    display: flex;
+}
+
+.filter-wrap {
+    display: flex;
+}
+
+.filter__check {
+    visibility: hidden;
+    width: 0;
+    height: 0;
+}
+
+.filter__check-pseudo {
+    display: flex;
+    background: url("../../images/smalltumboff.svg");
+    width: 36px;
+    height: 20px;
+}
+
+.filter__check:checked+span {
+    background: url("../../images/smalltumb.svg");
+}
+
+.filter__check-text {
+    color: white;
+    font-family: Inter, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0;
+    text-align: left;
+    margin: 0 0 0 12px;
+    align-self: center;
+}

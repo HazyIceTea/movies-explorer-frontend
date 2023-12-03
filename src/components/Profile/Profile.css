@@ -1,0 +1,136 @@
+.profile{
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 435px*2);
+    margin: 0 auto;
+}
+
+.profile__title{
+    color: white;
+    font-family: Inter, ‘Arial’, sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 29px;
+    letter-spacing: 0;
+    text-align: center;
+    margin: 74px 0 108px;
+}
+
+.profile__form{
+    display: flex;
+    flex-direction: column;
+}
+
+.profile__form-container{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #424242;
+}
+
+.profile__form-container:last-of-type{
+    border: 0;
+}
+
+.profile__form-input{
+    color: white;
+    background: transparent;
+    border: 0;
+    padding: 0;
+    text-align: right;
+    font-family: Inter, ‘Arial’, sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 13px;
+    letter-spacing: 0;
+    margin: 17px 0 16px 0;
+}
+
+.profile__form-input:focus {
+    outline: 1px solid #4285F4;
+}
+
+.profile__form-input-name{
+    color: white;
+    font-family: Inter, ‘Arial’, sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 13px;
+    letter-spacing: 0;
+    text-align: left;
+    margin: 16px 0 17px 0;
+
+}
+
+.profile__form-submit{
+    border: 0;
+    padding: 0;
+    color: white;
+    background: transparent;
+    font-family: Inter, ‘Arial’, sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0;
+    text-align: center;
+    cursor: pointer;
+    margin: 203px 0 16px;
+    transition: opacity linear .2s;
+}
+
+.profile__form-submit:hover {
+    opacity: .7;
+}
+
+.profile__exit-button{
+    border: 0;
+    padding: 0;
+    color: #EE3465;
+    background: transparent;
+    font-family: Inter, ‘Arial’, sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0;
+    cursor: pointer;
+    transition: opacity linear .2s;
+}
+
+.profile__exit-button:hover {
+    opacity: .7;
+}
+
+@media screen and (max-width: 1100px){
+    .profile {
+        width: calc(100% - 300px*2);
+    }
+}
+
+@media screen and (max-width: 900px){
+    .profile {
+        width: calc(100% - 250px*2);
+    }
+}
+
+@media screen and (max-width: 768px){
+    .profile {
+        width: calc(100% - 179px*2);
+    }
+}
+
+@media screen and (max-width: 600px){
+    .profile {
+        width: calc(100% - 120px*2);
+    }
+}
+
+@media screen and (max-width: 470px){
+    .profile {
+        width: calc(100% - 80px*2);
+    }
+}
+
+@media screen and (max-width: 400px){
+    .profile {
+        width: calc(100% - 30px*2);
+    }
+}
