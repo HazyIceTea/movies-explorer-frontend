@@ -1,4 +1,3 @@
-import logo from '../../images/logo.svg';
 import {Link} from "react-router-dom";
 import './Header.css';
 import {useState} from "react";
@@ -17,7 +16,7 @@ function Header({loggedIn}) {
 
     return (
         <header className="header">
-            <img className="header__logo" src={logo} alt="логотип"/>
+            <Link to="/" className="header__logo"></Link>
             <div className={`header__burger-container ${burgerOpened? "header__burger-container_opened": ""}`}>
                 <button className="burger__close" onClick={closeBurger}></button>
                 <nav>
@@ -35,7 +34,7 @@ function Header({loggedIn}) {
                 </nav>
                 <Link to={'/profile'} className="header__account">Аккаунт</Link>
             </div>
-            <nav className="header__navigation-container">
+            <nav className={`header__navigation-container ${!loggedIn? "header__navigation-container_visible": ""}`}>
                 {loggedIn ?
                     <>
                         <ul className="header__navigation">
@@ -62,9 +61,8 @@ function Header({loggedIn}) {
 
                 }
             </nav>
-            <button className="header__burger" onClick={openBurger}></button>
 
-            {/*{loggedIn && <Link to={'/profile'} className="header__account">Аккаунт</Link>}*/}
+            {loggedIn && <button className="header__burger" onClick={openBurger}></button>}
         </header>
     )
 }

@@ -6,6 +6,12 @@
     width: 100%
 }
 
+.movie-card__button {
+    background: transparent;
+    border: 0;
+    padding: 0;
+}
+
 .movie-card__save {
     color: white;
     font-family: Inter, Arial, sans-serif;

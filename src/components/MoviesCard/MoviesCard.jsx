@@ -9,7 +9,9 @@ function MoviesCard({saved, savedList}) {
             <img className="movie-card__image" src={cardimg} alt="Превью фильма"/>
             {
                 saved
-                ? <img src={savedList? deleteimg: savedimg} alt="Иконка 'сохранено'" className="movie-card__saved"/>
+                ? <button className="movie-card__button" disabled>
+                        <img src={savedList? deleteimg: savedimg} alt="Иконка 'сохранено'" className="movie-card__saved"/>
+                </button>
                 : <button className="movie-card__save">Сохранить</button>
             }
             <div className="movie-card__info-container">

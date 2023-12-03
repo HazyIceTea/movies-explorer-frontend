@@ -57,7 +57,7 @@
 
 .about-project__time-bar {
     background: #303030;
-    color: black;
+    color: white;
     font-family: Inter, ‘Arial’, sans-serif;
     font-size: 14px;
     font-weight: 400;
@@ -71,6 +71,7 @@
 .about-project__time-bar_type_back {
     background: #3DDC84;
     padding: 9px 0;
+    color: black;
 }
 
 .about-project__time-span {
@@ -85,7 +86,7 @@
 }
 
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 805px){
     .about-project {
         padding: 0 50px;
     }
@@ -103,7 +104,7 @@
     }
 }
 
-@media screen and (max-width: 400px){
+@media screen and (max-width: 600px){
     .about-project {
         padding: 0 18px;
     }

@@ -2,7 +2,7 @@
     color: white;
     display: flex;
     flex-direction: column;
-    width: calc(100% - 442px * 2);
+    /*width: calc(100% - 442px * 2);*/
     margin: 0 auto;
 }
 
@@ -10,6 +10,8 @@
     height: 38px;
     align-self: start;
     margin: 70px 0 40px;
+    background: url("../../images/logo.svg");
+    width: 38px;
 }
 
 .auth-page__title {
@@ -46,6 +48,8 @@
 .auth-page__form {
     display: flex;
     flex-direction: column;
+    align-self: center;
+
 }
 
 .auth-page__form-input-title {
@@ -86,9 +90,9 @@
     letter-spacing: 0;
     text-align: left;
     color: white;
-    width: 396px;
+    width: 366px;
     height: 46px;
-    padding: 0;
+    padding: 0 15px 0 15px;
 }
 
 .auth-page__bottom {
@@ -123,21 +127,10 @@
     opacity: .7;
 }
 
-@media screen and (max-width: 1000px) {
-    .auth-page {
-        width: calc(100% - 186px * 2);
-    }
-
-
-}
-
 @media screen and (max-width: 680px) {
-    .auth-page {
-        width: calc(100% - 60px * 2);
-    }
 
     .auth-page__form-input {
-        width: 300px;
+        width: 270px;
     }
 
     .auth-page__form-submit {
@@ -147,12 +140,9 @@
 }
 
 @media screen and (max-width: 400px) {
-    .auth-page {
-        width: calc(100% - 30px * 2);
-    }
 
     .auth-page__form-input {
-        width: 260px;
+        width: 230px;
     }
 
     .auth-page__form-submit {
@@ -166,5 +156,13 @@
 
     .auth-page__bottom-link {
         font-size: 12px;
+    }
+
+    .auth-page__logo {
+        align-self: center;
+    }
+
+    .auth-page__title {
+        align-self: center;
     }
 }
