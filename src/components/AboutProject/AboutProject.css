@@ -1,0 +1,139 @@
+.about-project {
+    display: flex;
+    background: #202020;
+    color: white;
+    flex-wrap: wrap;
+    padding: 0 70px;
+}
+
+.about-project__title {
+    font-family: Inter, ‘Arial’, sans-serif;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: -0.04em;
+    text-align: left;
+    margin: 110px 0 70px;
+    padding-bottom: 23px;
+    border-bottom: 1px solid #DADADA;
+    width: 100%;
+}
+
+.about-project__mini-section {
+    /*max-width: 550px;*/
+    width: 47%;
+    margin-right: 40px;
+}
+
+.about-project__mini-section:nth-of-type(2n) {
+    margin-right: 0;
+}
+
+.about-project__mini-section-title {
+    font-family: Inter, ‘Arial’, sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -0.04em;
+    text-align: left;
+    margin: 0 0 26px 0;
+}
+
+.about-project__mini-section-subtitle {
+    font-family: Inter, ‘Arial’, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0;
+    text-align: left;
+    margin: 0;
+}
+
+.about-project__time {
+    display: grid;
+    grid-template-columns: 20% 1fr;
+    width: 100%;
+}
+
+.about-project__time-bar {
+    background: #303030;
+    color: white;
+    font-family: Inter, ‘Arial’, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: 0;
+    text-align: center;
+    padding: 9px 0;
+    margin-top: 110px;
+}
+
+.about-project__time-bar_type_back {
+    background: #3DDC84;
+    padding: 9px 0;
+    color: black;
+}
+
+.about-project__time-span {
+    color: #8B8B8B;
+    text-align: center;
+    font-family: Inter, ‘Arial’, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17px;
+    letter-spacing: 0;
+    margin-bottom: 141px;
+}
+
+
+@media screen and (max-width: 805px){
+    .about-project {
+        padding: 0 50px;
+    }
+
+    .about-project__mini-section {
+        margin-right: 30px;
+    }
+
+    .about-project__mini-section-subtitle {
+        font-size: 12px;
+    }
+
+    .about-project__time-span {
+        margin-bottom: 90px;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .about-project {
+        padding: 0 18px;
+    }
+
+    .about-project__mini-section {
+        margin-right: 0;
+        width: 100%;
+        margin-bottom: 56px;
+    }
+
+    .about-project__mini-section-title {
+        font-size: 18px;
+        line-height: 21px;
+    }
+
+    .about-project__mini-section-subtitle {
+        font-size: 11px;
+        line-height: 16px;
+    }
+
+    .about-project__time-span {
+        margin-bottom: 69px;
+    }
+
+    .about-project__time {
+        grid-template-columns: 35% 1fr;
+    }
+
+    .about-project__time-bar {
+
+    }
+}
