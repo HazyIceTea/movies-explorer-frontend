@@ -11,6 +11,15 @@
     column-gap: 30px;
 }
 
+.movies-list__not-found {
+    color: white;
+    font-family: Inter, Arial, sans-serif;
+    font-size: 26px;
+    font-weight: 500;
+    letter-spacing: 0;
+    text-align: center;
+}
+
 .movies-list__more-button {
     margin-top: 78px;
     color: white;
