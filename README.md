@@ -2,4 +2,4 @@
 
 Деплой: http://iceteamovies.nomoredomainsrocks.ru/
 
-Пулреквест:
+Пулреквест: https://github.com/HazyIceTea/movies-explorer-frontend/pull/2
