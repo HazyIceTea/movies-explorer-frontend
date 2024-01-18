@@ -3,6 +3,7 @@ import {useContext, useEffect, useState} from "react";
 import currentUserContext from "../../contexts/CurrentUserContext";
 import useValidation from "../../hooks/useValidation";
 import Preloader from "../Preloader/Preloader";
+import { emailRegex } from "../../utils/constants";
 
 function Profile({onLogOut, isRequesting, sendUserData}) {
 
@@ -52,7 +53,8 @@ function Profile({onLogOut, isRequesting, sendUserData}) {
                     <span className="profile__form-input-name">E-mail</span>
                     <input type="email" name="email" required disabled={!isEditing}
                            value={values.email || ''} onChange={handleChange}
-                           className="profile__form-input"/>
+                           pattern={emailRegex}
+                           className="profile__form-input" />
                 </div>
                 <span className="profile__form-input-error">{errors.email}</span>
                 <span className={`profile__form-success ${isSuccess && "profile__form-success_visible"}`}>Успешно сохранено</span>

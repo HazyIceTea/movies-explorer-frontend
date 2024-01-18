@@ -1,6 +1,7 @@
 import AuthPage from "../AuthPage/AuthPage";
 import '../AuthPage/AuthPage.css'
 import useValidation from "../../hooks/useValidation";
+import {emailRegex} from "../../utils/constants";
 
 function Login({onLogin, isRequesting}) {
 
@@ -15,7 +16,7 @@ function Login({onLogin, isRequesting}) {
         <AuthPage title="Рады видеть!" buttonName="Войти" subtitle="Ещё не зарегистрированы?" linkPath="/signup"
                   linkText="Регистрация" onSubmit={loginSubmit} isRequesting={isRequesting} isFormValid={isFormValid}>
             <span className="auth-page__form-input-title">E-mail</span>
-            <input type="email" name="email" className="auth-page__form-input" onChange={handleChange} required/>
+            <input type="email" name="email" className="auth-page__form-input" pattern={emailRegex} onChange={handleChange} required/>
             <span className="auth-page__form-input-error">{errors.email}</span>
             <span className="auth-page__form-input-title">Пароль</span>
             <input type="password" name="password" className="auth-page__form-input" onChange={handleChange} required/>
