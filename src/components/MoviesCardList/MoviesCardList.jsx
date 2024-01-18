@@ -2,6 +2,13 @@ import './MoviesCardList.css';
 import MoviesCard from "../MoviesCard/MoviesCard";
 import {useEffect, useState} from "react";
 import {useLocation} from "react-router-dom";
+import {
+    largeScreenInitial,
+    largeScreenSize,
+    largeScreenStep,
+    mediumScreenInitial, mediumScreenStep, smallScreenInitial,
+    smallScreenSize, smallScreenStep
+} from "../../utils/constants";
 
 function MoviesCardList({handleSaveButton, savedMovies, filteredMovies, isFirstSearch}) {
 
@@ -12,26 +19,26 @@ function MoviesCardList({handleSaveButton, savedMovies, filteredMovies, isFirstS
 
     function loadMoreMovies() {
 
-        const tracker = {size: 12, toLoad: 3};
-        if (window.innerWidth >= 1241) {
-            tracker.size = 12;
-            tracker.toLoad = 3;
+        const tracker = {size: largeScreenInitial, toLoad: largeScreenStep};
+        if (window.innerWidth >= largeScreenSize) {
+            tracker.size = largeScreenInitial;
+            tracker.toLoad = largeScreenStep;
         }
 
-        if (window.innerWidth < 1241) {
-            tracker.size = 8;
-            tracker.toLoad = 2;
+        if (window.innerWidth < largeScreenSize) {
+            tracker.size = mediumScreenInitial;
+            tracker.toLoad = mediumScreenStep;
         }
-        if (window.innerWidth < 751) {
-            tracker.size = 5;
-            tracker.toLoad = 2;
+        if (window.innerWidth < smallScreenSize) {
+            tracker.size = smallScreenInitial;
+            tracker.toLoad = smallScreenStep;
         }
 
         return tracker
     }
 
     function checkScreenResize() {
-        if (window.innerWidth >= 1241 || window.innerWidth < 1241 || window.innerWidth < 751) {
+        if (window.innerWidth >= largeScreenSize || window.innerWidth < largeScreenSize || window.innerWidth < smallScreenSize) {
             setMoreCounter(loadMoreMovies().size)
         }
     }
