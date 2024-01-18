@@ -36,7 +36,7 @@ function Profile({onLogOut, isRequesting, sendUserData}) {
         reset({'username': currentUser.name, 'email': currentUser.email});
     },[currentUser])
 
-    const disabledRules = isEditing && ((values.name === currentUser.name && values.email === currentUser.email) || !isFormValid);
+    const disabledRules = isEditing && ((values.username === currentUser.name && values.email === currentUser.email) || !isFormValid);
 
     return (
         <section className="profile">
