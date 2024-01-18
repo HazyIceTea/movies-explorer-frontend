@@ -1,5 +1,5 @@
 import './App.css';
-import {Route, Routes, useNavigate} from "react-router-dom";
+import {Navigate, Route, Routes, useNavigate} from "react-router-dom";
 import Main from "./Main/Main";
 import Header from "./Header/Header";
 import Footer from "./Footer/Footer";
@@ -136,9 +136,13 @@ function App() {
         checkIsLogged ? <Preloader/> :
             <CurrentUserContext.Provider value={currentUser}>
                 <Routes>
-                    <Route path="/signin" element={<Login onLogin={login} isRequesting={isRequesting}/>}/>
+                    <Route path="/signin" element={isLoggedIn
+                        ? <Navigate to="/"/>
+                        : <Login onLogin={login} isRequesting={isRequesting}/>}/>
                     <Route path="/signup"
-                           element={<Register onRegistration={registration} isRequesting={isRequesting}/>}/>
+                           element={isLoggedIn
+                               ? <Navigate to="/"/>
+                               : <Register onRegistration={registration} isRequesting={isRequesting}/>}/>
                     <Route path="/" element={<><Header loggedIn={isLoggedIn}/><Main/><Footer/></>}/>
                     <Route path="/movies" element={
                         <>
