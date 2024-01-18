@@ -14,6 +14,7 @@ import {useEffect, useState} from "react";
 import CurrentUserContext from "../contexts/CurrentUserContext";
 import ProtectedRoute from "./ProtectedRoute/ProtectedRoute";
 import Preloader from "./Preloader/Preloader";
+import useValidation from "../hooks/useValidation";
 
 function App() {
 
@@ -23,15 +24,18 @@ function App() {
     const [isRequesting, setIsRequesting] = useState(false);
     const [currentUser, setCurrentUser] = useState({});
     const [savedMovies, setSavedMovies] = useState([]);
-
+    const [profileSuccess, setProfileSuccess] = useState(false);
+    const [profileError, setProfileError] = useState(false);
     const [isFirstSearch, setIsFirstSearch] = useState(false);
 
     const [checkIsLogged, setCheckIsLogged] = useState(true);
-    useEffect(()=> {
-        if(!localStorage.searchValue || !localStorage.shortsChecked){
+    const {reset} = useValidation();
+
+    useEffect(() => {
+        if (!localStorage.searchValue || !localStorage.shortsChecked) {
             setIsFirstSearch(true);
         }
-    },[])
+    }, [])
 
     useEffect(() => {
         if (localStorage.jwt) {
@@ -90,8 +94,16 @@ function App() {
     function sendUserData(username, email) {
         setIsRequesting(true);
         mainApi.sendUserInfo(username, email, localStorage.jwt)
-            .then(res => setCurrentUser(res))
-            .catch(err => console.error(`Ошибка обновления данных профиля ${err}`))
+            .then(res => {
+                setCurrentUser(res);
+                setProfileSuccess(true)
+            })
+            .catch(err => {
+                console.error(`Ошибка обновления данных профиля ${err}`);
+                setProfileError(true);
+                reset({'username': currentUser.name, 'email': currentUser.email})
+
+            })
             .finally(() => setIsRequesting(false))
     }
 
@@ -150,7 +162,10 @@ function App() {
                         <>
                             <Header loggedIn={isLoggedIn}/>
                             <ProtectedRoute element={Profile} isRequesting={isRequesting} sendUserData={sendUserData}
-                                            onLogOut={logOut} loggedIn={isLoggedIn}/>
+                                            onLogOut={logOut} profileSuccess={profileSuccess}
+                                            profileError={profileError}
+                                            setProfileError={setProfileError}
+                                            setProfileSuccess={setProfileSuccess} loggedIn={isLoggedIn}/>
                             <Footer/>
                         </>
                     }/>

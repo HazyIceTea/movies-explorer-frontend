@@ -5,24 +5,24 @@ import useValidation from "../../hooks/useValidation";
 import Preloader from "../Preloader/Preloader";
 import { emailRegex } from "../../utils/constants";
 
-function Profile({onLogOut, isRequesting, sendUserData}) {
+function Profile({onLogOut, isRequesting, sendUserData, profileSuccess, setProfileSuccess, profileError, setProfileError}) {
 
     const [isEditing, setIsEditing] = useState(false);
     const currentUser = useContext(currentUserContext);
     const {values, errors, isFormValid, handleChange, reset} = useValidation();
-    const [isSuccess, setIsSuccess] = useState(false);
 
     function onEdit(evt) {
         evt.preventDefault();
-        setIsSuccess(false);
+        setProfileSuccess(false);
+        setProfileError(false);
         setIsEditing(true);
     }
 
     function onSave(evt) {
         evt.preventDefault();
         sendUserData(values.username, values.email);
-        setIsSuccess(true);
         setIsEditing(false);
+
     }
 
     function onCancel(evt) {
@@ -57,7 +57,9 @@ function Profile({onLogOut, isRequesting, sendUserData}) {
                            className="profile__form-input" />
                 </div>
                 <span className="profile__form-input-error">{errors.email}</span>
-                <span className={`profile__form-success ${isSuccess && "profile__form-success_visible"}`}>Успешно сохранено</span>
+                <span className={`profile__form-success ${profileSuccess && "profile__form-success_visible"}`}>Успешно сохранено</span>
+
+                <span className={`profile-form-submit-error ${profileError && "profile-form-submit-error_visible"}`}>Ошибка обновления данных профиля</span>
                 {isRequesting
                     ? <Preloader/>
                     : <button className={`profile__form-submit ${disabledRules && "profile__form-submit_disabled"}`} disabled = {disabledRules}

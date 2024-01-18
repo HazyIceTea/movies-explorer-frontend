@@ -94,11 +94,27 @@
     line-height: 16px;
     letter-spacing: 0;
     text-align: center;
-    margin: 187px 0 16px;
+    margin: 171px 0 16px;
     visibility: hidden;
 }
 
 .profile__form-success_visible {
+    visibility: visible;
+}
+
+.profile-form-submit-error {
+    color: #EE3465;
+    font-family: Inter, ‘Arial’, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0;
+    text-align: center;
+    margin: 16px 0 16px;
+    visibility: hidden;
+}
+
+.profile-form-submit-error_visible {
     visibility: visible;
 }
 
