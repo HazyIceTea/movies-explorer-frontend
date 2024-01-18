@@ -24,9 +24,14 @@ function App() {
     const [currentUser, setCurrentUser] = useState({});
     const [savedMovies, setSavedMovies] = useState([]);
 
-    const [isFirstSearch, setIsFirstSearch] = useState(true);
+    const [isFirstSearch, setIsFirstSearch] = useState(false);
 
     const [checkIsLogged, setCheckIsLogged] = useState(true);
+    useEffect(()=> {
+        if(!localStorage.searchValue || !localStorage.shortsChecked){
+            setIsFirstSearch(true);
+        }
+    },[])
 
     useEffect(() => {
         if (localStorage.jwt) {

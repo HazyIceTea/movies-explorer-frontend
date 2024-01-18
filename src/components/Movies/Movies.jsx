@@ -42,23 +42,24 @@ function Movies({handleSaveButton, savedMovies, isFirstSearch, setIsFirstSearch}
     }
 
     useEffect(() => {
-        if (!isFirstSearch) {
-            const movies = JSON.parse(localStorage.allMovies);
-            const searchValue = JSON.parse(localStorage.searchValue);
-            const shortsIsChecked = JSON.parse(localStorage.shortsChecked);
-            setAllMovies(movies);
-            setSearchBarState(searchValue);
-            setIsShortChecked(shortsIsChecked);
-            filterMovies(searchValue, shortsIsChecked, movies);
-        }
-    }, [filterMovies])
+            if(!isFirstSearch){
+                const movies = JSON.parse(localStorage.allMovies);
+                const searchValue = JSON.parse(localStorage.searchValue);
+                const shortsIsChecked = JSON.parse(localStorage.shortsChecked);
+                setAllMovies(movies);
+                setSearchBarState(searchValue);
+                setIsShortChecked(shortsIsChecked);
+                filterMovies(searchValue, shortsIsChecked, movies);
+            }
+    }, [])
 
 
     return (
         <section className="movies">
             <SearchForm findMovies={findMovies} filterMovies={filterMovies} allMovies={allMovies}
                         isShortChecked={isShortChecked} setIsShortChecked={setIsShortChecked}
-                        searchBarState={searchBarState} isFirstSearch={isFirstSearch} setIsFirstSearch={setIsFirstSearch}/>
+                        searchBarState={searchBarState} isFirstSearch={isFirstSearch}
+                        setIsFirstSearch={setIsFirstSearch}/>
             <MoviesCardList savedMovies={savedMovies} handleSaveButton={handleSaveButton}
                             filteredMovies={filteredMovies} isRequesting={isRequesting} isFirstSearch={isFirstSearch}
                             setIsFirstSearch={setIsFirstSearch}/>
