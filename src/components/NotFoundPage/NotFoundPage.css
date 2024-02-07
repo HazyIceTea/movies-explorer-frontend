@@ -32,9 +32,11 @@
     letter-spacing: 0;
     text-align: center;
     color: #4285F4;
-    margin-top: 184px;
+    margin: 184px auto 0;
     text-decoration: none;
     transition: opacity linear .2s;
+    background: transparent;
+    border: 0;
 }
 
 .not-found-page__link:hover {

@@ -41,8 +41,17 @@
     transition: opacity linear .2s;
 }
 
+.auth-page__form-submit_disabled {
+    opacity: .5;
+    cursor: default;
+}
+
 .auth-page__form-submit:hover {
     opacity: .7;
+}
+
+.auth-page__form-submit_disabled:hover {
+    opacity: .5;
 }
 
 .auth-page__form {
